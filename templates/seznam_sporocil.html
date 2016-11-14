@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block specifika %}
+    <section class="container well">
+        <div class="col-sm-12">
+            <h3>Seznam sporocil:</h3>
+
+            {% for sporocilo in seznam %}
+                <div class="panel panel-default">
+                    <div class="panel-body">{{ sporocilo.sporocilo }}
+                                            <a href="/sporocilo/{{ sporocilo.key.id() }}/izbrisi" class="btn btn-default" style="float:right"><span class="glyphicon glyphicon-trash"></span> Izbrisi</a>
+                                            <a href="/sporocilo/{{ sporocilo.key.id() }}/uredi" class="btn btn-default" style="float:right"><span class="glyphicon glyphicon-edit"></span> Uredi</a>
+                    </div>
+                    <div class="panel-footer"><a href="/sporocilo/{{ sporocilo.key.id() }}">{{ sporocilo.ime }} - {{ sporocilo.email }}</a><span style="float:right;">{{ sporocilo.datum }}</span></div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock specifika %}

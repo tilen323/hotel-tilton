@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block specifika %}
+    <section class="container well">
+        <h3>Podatki o sporocilu</h3>
+
+         <ul class="list-group">
+             <li class="list-group-item">ID: {{ sporocilo.key.id() }}</li>
+             <li class="list-group-item">Ime: {{ sporocilo.ime }}</li>
+             <li class="list-group-item">E-mail: {{ sporocilo.email }}</li>
+             <li class="list-group-item">Datum in cas objave: {{ sporocilo.datum }}</li>
+             <li class="list-group-item">Sporocilo: {{ sporocilo.sporocilo }}</li>
+        </ul>
+
+        <a href="/sporocilo/{{ sporocilo.key.id() }}/uredi" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Uredi</a>
+        <a href="/sporocilo/{{ sporocilo.key.id() }}/izbrisi" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Izbrisi</a><br>
+        <a class="btn btn-default" href="/seznam_sporocil" style="float: left; margin-top: 5;"><span class="glyphicon glyphicon-list"></span> Seznam sporocil</a>
+
+    </section>
+{% endblock specifika %}
